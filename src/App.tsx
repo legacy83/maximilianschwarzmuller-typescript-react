@@ -1,11 +1,14 @@
 import React from 'react';
+import TodoList from './components/TodoList';
 
 const App: React.FC = () => {
-  return(
-    <div className="App">
-      <h1>hello, world!</h1>
-    </div>
-  );
-}
+	const todoItems = [{ id: 't1', text: 'finish the course' }];
+
+	return (
+		<div className="App">
+			<TodoList items={todoItems} />
+		</div>
+	);
+};
 
 export default App;
