@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import './NewTodo.css';
 
 const NewTodo: React.FC<NewTodoProps> = (props) => {
 	const inputRef = useRef<HTMLInputElement>(null);
