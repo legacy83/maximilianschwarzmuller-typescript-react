@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 
-const NewTodo: React.FC = () => {
+const NewTodo: React.FC<NewTodoProps> = (props) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const submitHandler = (event: React.FormEvent) => {
 		event.preventDefault();
 		const entryText = inputRef.current!.value;
-		console.log(entryText);
+		props.onAdd(entryText);
 	};
 
 	return (
@@ -19,5 +19,9 @@ const NewTodo: React.FC = () => {
 		</form>
 	);
 };
+
+interface NewTodoProps {
+	onAdd: (value: string) => void;
+}
 
 export default NewTodo;
