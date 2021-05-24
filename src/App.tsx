@@ -7,7 +7,10 @@ const App: React.FC = () => {
 	const [todoItems, setTodoItems] = useState<Todo[]>([]);
 
 	const addHandler = (value: string) => {
-		setTodoItems([{ id: Math.random().toString(), text: value }]);
+		setTodoItems((previous) => [
+			...previous,
+			{ id: Math.random().toString(), text: value },
+		]);
 	};
 
 	return (
