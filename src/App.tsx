@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
+import Todo from './model/todo';
 
 const App: React.FC = () => {
-	const todoItems = [{ id: 't1', text: 'finish the course' }];
+	const [todoItems, setTodoItems] = useState<Todo[]>([]);
 
 	const addHandler = (value: string) => {
-		console.log(value);
+		setTodoItems([{ id: Math.random().toString(), text: value }]);
 	};
 
 	return (
